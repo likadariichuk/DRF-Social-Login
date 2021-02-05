@@ -73,3 +73,5 @@
         SITE_ID = 1
         
         python manage.py migrate
+        
+![image](https://user-images.githubusercontent.com/59927776/107033631-e265dc80-67b5-11eb-874d-664da7fc5118.png)
