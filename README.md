@@ -71,3 +71,5 @@ settings.py:
         SITE_ID = 1
         
         python manage.py migrate
+        
+        
