@@ -1,4 +1,5 @@
-# dj_rest_auth
+###dj_rest_auth
+
     # Create the project directory
     mkdir tutorial
     cd tutorial
@@ -14,7 +15,7 @@
     # Set up a new project with a single application
     django-admin startproject api .  # Note the trailing '.' character
     cd api
-    django-admin startapp accounts
+    django-admin startapp authentication
     cd ..
 
     python manage.py migrate
@@ -22,8 +23,10 @@
     
   
     pip install 'dj-rest-auth[with_social]'
-    
-settings.py:
+
+##looool
+
+###settings.py
         
         INSTALLED_APPS = [
             'django.contrib.admin',
@@ -32,8 +35,7 @@ settings.py:
             'django.contrib.sessions',
             'django.contrib.messages',
             'django.contrib.staticfiles',
-            'django.contrib.sites',
-
+           
             'rest_framework',
             'rest_framework.authtoken',
             'dj_rest_auth',
@@ -51,7 +53,7 @@ settings.py:
         
         urlpatterns = [
             ...,
-            path('dj-rest-auth/', include('dj_rest_auth.urls'))
+            path('auth/', include('dj_rest_auth.urls'))
         ]
 
         python manage.py migrate
@@ -71,5 +73,3 @@ settings.py:
         SITE_ID = 1
         
         python manage.py migrate
-        
-        
