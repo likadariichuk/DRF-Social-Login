@@ -1,5 +1,14 @@
 ###dj_rest_auth
 
+info repos:
+https://gist.github.com/dgilge/dbe9260208aadee535cef7c412a1162e
+https://michaeldel.github.io/posts/django-rest-auth-social-tutorial/
+https://github.com/michaeldel/django-rest-auth-social-example/blob/master/app/urls.py
+https://simpleisbetterthancomplex.com/tutorial/2018/11/22/how-to-implement-token-authentication-using-django-rest-framework.html
+https://medium.com/@MicroPyramid/integration-of-github-api-with-python-django-6f4253f9deeb
+https://www.toptal.com/django/integrate-oauth-2-into-django-drf-back-end
+https://jpadilla.github.io/django-rest-framework-oauth/authentication/
+
     # Create the project directory
     mkdir tutorial
     cd tutorial
@@ -75,3 +84,9 @@
         python manage.py migrate
         
 ![image](https://user-images.githubusercontent.com/59927776/107033631-e265dc80-67b5-11eb-874d-664da7fc5118.png)
+
+We can now fill our new Social Application, do not forget to add the default website (example.com in our case) to Sites field:
+![image](https://user-images.githubusercontent.com/59927776/107040329-5fe21a80-67bf-11eb-895a-019c1de0e510.png)
+
+
+
