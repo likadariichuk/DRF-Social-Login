@@ -14,7 +14,7 @@ https://jpadilla.github.io/django-rest-framework-oauth/authentication/
     cd tutorial
 
     # Create a virtual environment to isolate our package dependencies locally
-    python3 -m venv env
+    python -m venv env
     source env/bin/activate  # On Windows use `env\Scripts\activate`
 
     # Install Django and Django REST framework into the virtual environment
@@ -23,19 +23,21 @@ https://jpadilla.github.io/django-rest-framework-oauth/authentication/
 
     # Set up a new project with a single application
     django-admin startproject api .  # Note the trailing '.' character
+    rename upper api folder to the root
+    cd root
     cd api
     django-admin startapp authentication
     cd ..
-
+    
+    ![tree](https://user-images.githubusercontent.com/59927776/107851621-a95be680-6e0b-11eb-9754-0283bd17f848.png)
+    
     python manage.py migrate
     python manage.py createsuperuser --email admin@example.com --username admin
     
   
     pip install 'dj-rest-auth[with_social]'
 
-##looool
-
-###settings.py
+settings.py:
         
         INSTALLED_APPS = [
             'django.contrib.admin',
