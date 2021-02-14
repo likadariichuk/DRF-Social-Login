@@ -90,5 +90,48 @@ settings.py:
 We can now fill our new Social Application, do not forget to add the default website (example.com in our case) to Sites field:
 ![image](https://user-images.githubusercontent.com/59927776/107040329-5fe21a80-67bf-11eb-895a-019c1de0e510.png)
 
+Because we want to login with GitHub, we have to define a specific view for it where we are going to POST the code from URL that github will give us.
+
+First define the GitHub login view, deriving from generic social login view:
+
+    from allauth.socialaccount.providers.github import views as github_views
+    from allauth.socialaccount.providers.github.views import GitHubOAuth2Adapter
+    from django.urls import reverse
+    from rest_auth.registration.views import SocialLoginView
 
 
+    class GitHubLogin(SocialLoginView):
+        adapter_class = GitHubOAuth2Adapter
+        client_class = OAuth2Client
+
+        @property
+        def callback_url(self):
+            # use the same callback url as defined in your GitHub app, this url
+            # must be absolute:
+            return self.request.build_absolute_uri(reverse('github_callback'))
+
+The callback property probably will render the callback url in a view. And also without it you get no field error.
+
+urls.py:
+
+    from api.authentication.views import GitHubLogin
+    
+    urlpatterns = [
+        ...,
+        path('auth/github/', GitHubLogin.as_view()) #use this link to POST your github code to login
+    ]
+  
+We have to fix that missing callback view. Because our app is a back-end API only, we want our callback view to redirect the user to front-end, including query parameters. 
+We have to define a github callback view which will redirect the github callback to frontend.
+
+
+views.py:
+
+    import urllib.parse
+
+    from django.shortcuts import redirect
+
+    def github_callback(request):
+        params = urllib.parse.urlencode(request.GET)
+        return redirect(f'https://frontend/auth/github?{params}')
+    
