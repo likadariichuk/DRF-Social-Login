@@ -21,7 +21,8 @@ Install Django and Django REST framework into the virtual environment:
 Set up a new project with a single application:
     
     django-admin startproject api 
-    rename parent "api" directory to the "core"
+Rename parent "api" directory to the "core"
+    
     cd core
     cd api
     django-admin startapp authentication
