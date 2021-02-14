@@ -134,4 +134,28 @@ views.py:
     def github_callback(request):
         params = urllib.parse.urlencode(request.GET)
         return redirect(f'https://frontend/auth/github?{params}')
-    
+ 
+ 
+ urlpatterns = [
+    ...,
+    path('auth/github/callback/', github_callback, name='github_callback'), #use the same callback url as defined in your GitHub app
+]
+
+![callback](https://user-images.githubusercontent.com/59927776/107885319-cf5fb480-6ef9-11eb-8200-998d1ecef8c0.png)
+
+We now need to retrieve the OAuth2 authorize URL, in our case it should look (almost) like this:
+
+https://github.com/login/oauth/authorize?&client_id=6d2098b0d015605ff492
+We could of course generate this address on front-end, but it is a much better idea to retrieve it from back-end. Fortunately, such view already exists wihtin Django AllAuth module:
+
+from allauth.socialaccount.providers.github import views as github_views
+
+urlpatterns = [
+    ...,
+    path('auth/github/url/', github_views.oauth2_login)
+]
+
+This view will automatically redirect the user to authorize URL, with reverse('github_callback') as callback (hence the GitHubLogin URL name above), as you can see here (removed non-relevant output):
+
+Find the last paragraph here (that's where you finished last time):
+https://michaeldel.github.io/posts/django-rest-auth-social-tutorial/
