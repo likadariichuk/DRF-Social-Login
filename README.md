@@ -63,7 +63,7 @@ urls.py:
 
         python manage.py migrate
         
-Add social authentication configuration settings.py:      
+Add social authentication configuration to settings.py:      
   
         INSTALLED_APPS = [
             ...,
