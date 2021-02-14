@@ -1,4 +1,4 @@
-###dj_rest_auth
+dj_rest_auth
 
 info repos:
 https://gist.github.com/dgilge/dbe9260208aadee535cef7c412a1162e
@@ -9,22 +9,27 @@ https://medium.com/@MicroPyramid/integration-of-github-api-with-python-django-6f
 https://www.toptal.com/django/integrate-oauth-2-into-django-drf-back-end
 https://jpadilla.github.io/django-rest-framework-oauth/authentication/
 
-    # Create the project directory
-    mkdir tutorial
-    cd tutorial
+## Create Django with Rest Framework project ##
+Create the project directory:
+    
+    mkdir api
+    cd api
 
-    # Create a virtual environment to isolate our package dependencies locally
+Create a virtual environment to isolate our package dependencies locally:
+    
     python -m venv env
     source env/bin/activate  # On Windows use `env\Scripts\activate`
 
-    # Install Django and Django REST framework into the virtual environment
+Install Django and Django REST framework into the virtual environment:
+    
     pip install django
     pip install djangorestframework
 
-    # Set up a new project with a single application
-    django-admin startproject api .  # Note the trailing '.' character
-    rename upper api folder to the root
-    cd root
+Set up a new project with a single application:
+    
+    django-admin startproject api 
+    rename parent "api" directory to the "core"
+    cd core
     cd api
     django-admin startapp authentication
     cd ..
@@ -40,15 +45,10 @@ https://jpadilla.github.io/django-rest-framework-oauth/authentication/
 settings.py:
         
         INSTALLED_APPS = [
-            'django.contrib.admin',
-            'django.contrib.auth',
-            'django.contrib.contenttypes',
-            'django.contrib.sessions',
-            'django.contrib.messages',
-            'django.contrib.staticfiles',
-           
+            ...,
             'rest_framework',
             'rest_framework.authtoken',
+            ...,
             'dj_rest_auth',
         ]
         
@@ -72,6 +72,7 @@ settings.py:
   social auth settings.py:      
   
         INSTALLED_APPS = [
+            ...,
             'django.contrib.sites',
             'allauth',
             'allauth.account',
@@ -87,7 +88,8 @@ settings.py:
         
 ![image](https://user-images.githubusercontent.com/59927776/107033631-e265dc80-67b5-11eb-874d-664da7fc5118.png)
 
-We can now fill our new Social Application, do not forget to add the default website (example.com in our case) to Sites field:
+Add a new Social Application, do not forget to add the default website (example.com in our case) to Sites field:
+
 ![image](https://user-images.githubusercontent.com/59927776/107040329-5fe21a80-67bf-11eb-895a-019c1de0e510.png)
 
 Because we want to login with GitHub, we have to define a specific view for it where we are going to POST the code from URL that github will give us.
