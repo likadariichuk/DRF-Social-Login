@@ -1,13 +1,4 @@
-dj_rest_auth
-
-info repos:
-https://gist.github.com/dgilge/dbe9260208aadee535cef7c412a1162e
-https://michaeldel.github.io/posts/django-rest-auth-social-tutorial/
-https://github.com/michaeldel/django-rest-auth-social-example/blob/master/app/urls.py
-https://simpleisbetterthancomplex.com/tutorial/2018/11/22/how-to-implement-token-authentication-using-django-rest-framework.html
-https://medium.com/@MicroPyramid/integration-of-github-api-with-python-django-6f4253f9deeb
-https://www.toptal.com/django/integrate-oauth-2-into-django-drf-back-end
-https://jpadilla.github.io/django-rest-framework-oauth/authentication/
+Painless OAuth2 tutorial for Django Rest Framework
 
 ## Create Django with Rest Framework project ##
 Create the project directory:
@@ -161,3 +152,12 @@ This view will automatically redirect the user to authorize URL, with reverse('g
 
 Find the last paragraph here (that's where you finished last time):
 https://michaeldel.github.io/posts/django-rest-auth-social-tutorial/
+
+info repos:
+https://gist.github.com/dgilge/dbe9260208aadee535cef7c412a1162e
+https://michaeldel.github.io/posts/django-rest-auth-social-tutorial/
+https://github.com/michaeldel/django-rest-auth-social-example/blob/master/app/urls.py
+https://simpleisbetterthancomplex.com/tutorial/2018/11/22/how-to-implement-token-authentication-using-django-rest-framework.html
+https://medium.com/@MicroPyramid/integration-of-github-api-with-python-django-6f4253f9deeb
+https://www.toptal.com/django/integrate-oauth-2-into-django-drf-back-end
+https://jpadilla.github.io/django-rest-framework-oauth/authentication/
