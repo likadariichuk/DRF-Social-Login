@@ -1,5 +1,7 @@
 # Painless OAuth2 tutorial for Django Rest Framework #
+Sometimes it may seem a chore to tear yourself away from your creative programming part to face the unglamorous and unexciting business of setting up the authentication.
 
+Let's not be bothered and use a third-party package aptly named dj-rest-auth, which will make our day better.
 ## Create Django with Rest Framework project ##
 Create the project directory:
     
