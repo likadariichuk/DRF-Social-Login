@@ -79,12 +79,10 @@ Add social authentication configuration to settings.py:
         SITE_ID = 1
         
         python manage.py migrate
-        
-![github app](https://user-images.githubusercontent.com/59927776/107888915-d1347280-6f0f-11eb-93ce-6c79ad7ce166.png)
-
+      
 Add a new Social Application, do not forget to add the default website (example.com in our case) to Sites field:
 
-![image](https://user-images.githubusercontent.com/59927776/107040329-5fe21a80-67bf-11eb-895a-019c1de0e510.png)
+![github app](https://user-images.githubusercontent.com/59927776/107888915-d1347280-6f0f-11eb-93ce-6c79ad7ce166.png)
 
 Because we want to login with GitHub, we have to define a specific view for it where we are going to POST the code from URL that github will give us.
 
