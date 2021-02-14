@@ -1,4 +1,4 @@
-Painless OAuth2 tutorial for Django Rest Framework
+# Painless OAuth2 tutorial for Django Rest Framework #
 
 ## Create Django with Rest Framework project ##
 Create the project directory:
