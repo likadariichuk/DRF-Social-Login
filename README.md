@@ -80,7 +80,7 @@ Add social authentication configuration to settings.py:
         
         python manage.py migrate
         
-![image](https://user-images.githubusercontent.com/59927776/107033631-e265dc80-67b5-11eb-874d-664da7fc5118.png)
+![github app](https://user-images.githubusercontent.com/59927776/107888915-d1347280-6f0f-11eb-93ce-6c79ad7ce166.png)
 
 Add a new Social Application, do not forget to add the default website (example.com in our case) to Sites field:
 
