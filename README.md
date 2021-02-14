@@ -28,7 +28,7 @@ Rename parent "api" directory to the "core"
     django-admin startapp authentication
     cd ..
     
-    ![tree](https://user-images.githubusercontent.com/59927776/107851621-a95be680-6e0b-11eb-9754-0283bd17f848.png)
+![tree](https://user-images.githubusercontent.com/59927776/107851621-a95be680-6e0b-11eb-9754-0283bd17f848.png)
     
     python manage.py migrate
     python manage.py createsuperuser --email admin@example.com --username admin
