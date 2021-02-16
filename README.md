@@ -162,3 +162,8 @@ https://simpleisbetterthancomplex.com/tutorial/2018/11/22/how-to-implement-token
 https://medium.com/@MicroPyramid/integration-of-github-api-with-python-django-6f4253f9deeb
 https://www.toptal.com/django/integrate-oauth-2-into-django-drf-back-end
 https://jpadilla.github.io/django-rest-framework-oauth/authentication/
+
+
+# JWT #
+
+    pip install djangorestframework-simplejwt
